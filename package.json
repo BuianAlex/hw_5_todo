@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "@material/dialog": "^4.0.0",
     "@material/ripple": "^4.0.0",
     "material-components-web": "^4.0.0"
   }

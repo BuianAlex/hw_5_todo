@@ -1,5 +1,5 @@
 $mdc-theme-primary: #4a148c;
-$mdc-theme-secondary: #ffffff;
+$mdc-theme-secondary: #fff;
 $mdc-theme-on-primary: #7c43bd;
 $mdc-theme-on-secondary: #000;
 
@@ -23,11 +23,15 @@ body {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
+  z-index: 500;
 }
 
 @media (min-width: 1024px) {
   .app-fab--absolute {
     bottom: 1.5rem;
     right: 1.5rem;
+  }
+  .mdc-dialog {
+    @include mdc-dialog-min-width(500px);
   }
 }
