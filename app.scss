@@ -1,0 +1,33 @@
+$mdc-theme-primary: #4a148c;
+$mdc-theme-secondary: #ffffff;
+$mdc-theme-on-primary: #7c43bd;
+$mdc-theme-on-secondary: #000;
+
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/button/mdc-button";
+@import "@material/fab/mdc-fab";
+@import "@material/list/mdc-list";
+@import "@material/form-field/mdc-form-field";
+@import "@material/checkbox/mdc-checkbox";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/list/mdc-list";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/dialog/mdc-dialog";
+@import "@material/textfield/mdc-text-field";
+@import "@material/layout-grid/mdc-layout-grid";
+body {
+  margin: 0;
+}
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .app-fab--absolute {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
