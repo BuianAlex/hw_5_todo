@@ -1,9 +1,10 @@
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require("autoprefixer");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: ['./app.scss', './app.js'],
+  entry: ["./app.scss", "./app.js"],
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -11,36 +12,37 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'bundle.css',
-            },
+              name: "bundle.css"
+            }
           },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
+          { loader: "extract-loader" },
+          { loader: "css-loader" },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              plugins: () => [autoprefixer()],
-            },
+              plugins: () => [autoprefixer()]
+            }
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sassOptions: {
-                includePaths: ['./node_modules'],
-              },
-            },
-          },
-        ],
+                includePaths: ["./node_modules"]
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['@babel/preset-env'],
-        },
-      },
-    ],
+          presets: ["@babel/preset-env"]
+        }
+      }
+    ]
   },
+  plugins: [new CopyPlugin([{ from: "*.html", to: "./" }])]
 };
